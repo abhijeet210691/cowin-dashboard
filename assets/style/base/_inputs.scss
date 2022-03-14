@@ -1,0 +1,9 @@
+.form-select{
+    background: $primarycolor;
+    color: $white;
+    font-size: 1.4rem;
+    border: none;
+    &:focus{
+        box-shadow: none;
+    }
+}
