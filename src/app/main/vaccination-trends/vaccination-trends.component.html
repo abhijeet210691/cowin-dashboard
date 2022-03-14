@@ -1,0 +1,13 @@
+<div class="vaccination-trends-wraper">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="line-graph">
+                <div class="btn-wraper">
+                    <button class="btn btn-success active btn-dose" (click)="toggleChart('dose')">By Dose</button>
+                    <button class="btn btn-success btn-age" (click)="toggleChart('age')">By Age</button>
+                </div>
+                <canvas id="my_first_chart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>

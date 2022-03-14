@@ -1,0 +1,25 @@
+<!-- <app-banner-charts></app-banner-charts> -->
+<div class="dashboard-wraper">
+  <div class="container-fluid">
+    <div class="filter">
+      <select id="stateNames" class="states">
+        <option selected>Select State</option>
+        <option *ngFor="let item of stateNameData">{{item.state_name}}</option>
+      </select>
+      <select id="districtNames" class="districts" (change)="districtFilter($event.target)">
+        <option selected>Select District</option>
+        <option *ngFor="let item of districtData" id={{item.district_id}}>{{item.district_name}}</option>
+      </select>
+    </div>
+  </div>
+  <app-total-vaccine [trends]="stateName" [currentDistrict]="districtWiseData" [currentSessionDistrict]="disrtictSites"
+    [currentSessionState]="stateSites"></app-total-vaccine>
+  <app-vaccination-trends [stateVaccineTime]="stateVaccinebyTime" [currentVaccineAge]=" stateVaccinebyAge"
+    [currentDistrictByTime]="districtVaccineByTime " [currentDistrictAge]="districtVaccineByAge">
+  </app-vaccination-trends>
+  <app-vaccination-by-gender [currentVaccineGender]="stateVaccinebyGende" [currentTotalByAge]="stateTotalByAge"
+    [currentDistrictGender]="districtVaccinebyGender" [currentDistrictByAge]=" districtTotalByAge">
+  </app-vaccination-by-gender>
+  <app-state-vaccination></app-state-vaccination>
+  <app-aefi-report></app-aefi-report>
+</div>

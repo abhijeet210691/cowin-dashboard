@@ -1,0 +1,43 @@
+@import "../../../assets/style/helpers/variables";
+@import "../../../assets/style/helpers/mixins";
+
+.dashboard-wraper {
+    background-color: $grey;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    position: relative;
+    .filter {
+        position: fixed;
+        top: 15rem;
+        padding: 3rem 0;
+        max-width: 60rem;
+        display: flex;
+        justify-content: space-between;
+        z-index: 9;
+        @include breakpoint(mobile){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .states, .districts {
+            max-width: 25rem;
+            background-color: transparent;
+            border: none;
+            margin: 0;
+            width: 100%;
+            outline: none;
+            border: 1px solid $secoundrycolor;
+            padding: 0.5rem;
+            font-size: 1.6rem;
+            margin-right: 1rem;
+            &::-ms-expand {
+                display: none;
+            }
+            option{
+                max-width: 30rem;
+            }
+            @include breakpoint(mobile){
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

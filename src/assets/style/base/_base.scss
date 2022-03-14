@@ -1,0 +1,39 @@
+html {
+    font-size: 10px;
+    @media only screen and (max-width: 1200px) {
+        font-size: 9px;
+    }
+}
+
+body {
+    font-size: 1.4rem;
+    @media only screen and (max-width: 1200px) {
+        font-size: 1.4rem;
+    }
+}
+
+.container-fluid{
+    padding: 0 3rem;
+    @include breakpoint(mobile){
+        padding: 0 2rem;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li{
+
+    }
+}
+
+.card{
+    border: none;
+    border-radius: 2rem;
+    height: 100%;
+}

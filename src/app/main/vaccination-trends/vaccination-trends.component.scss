@@ -1,0 +1,21 @@
+@import '../../../assets/style/helpers/variables';
+@import '../../../assets/style/helpers/mixins';
+
+.vaccination-trends-wraper{
+    .card{
+        padding: 2rem;
+        border: none;
+        .line-graph{
+            .btn-wraper{
+                .active{
+                    background-color: $secoundrycolor;
+                    color: $white;
+                }
+                .btn-dose{
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
+
+}

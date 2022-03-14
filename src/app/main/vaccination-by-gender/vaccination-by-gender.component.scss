@@ -1,0 +1,15 @@
+@import '../../../assets/style/helpers/variables';
+@import '../../../assets/style/helpers/mixins';
+
+.vaccination-by-gender{
+    margin: 5rem 0;
+    .card{
+        padding: 2rem;
+        canvas{
+            height: 100%;
+        }
+    }
+    .space-top{
+        margin-top: 2rem;
+    }
+}

@@ -1,0 +1,156 @@
+@import "../../../assets/style/helpers/variables";
+@import "../../../assets/style/helpers/mixins";
+
+.state-vaccination-wraper {
+  .card{
+    .card-header{
+      background-color: $white;
+      border: none;
+      padding: 2rem;
+    }
+  }
+    .state-data{
+      max-height: 80rem;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+      @include breakpoint(mobile){
+        max-height: 50rem;
+      }
+      .state-list-wraper {
+          display: flex;
+          align-items: flex-end;
+          .state-list {
+              width: 100%;
+              padding: 2rem;
+              h4 {
+                  text-align: center;
+                  color: $grey-shade;
+              }
+              .vaccination-details-wraper {
+                  .vaccination-details {
+                      table {
+                          width: 100%;
+                          @include breakpoint(mobile){
+                            min-width: 50rem;
+                          }
+                          th{
+                            width: 8rem;
+                          }
+                      }
+                  }
+              }
+          }
+        }
+    }
+      .indian-map{
+        height: 100%;      
+      }
+      .statewise-data{
+        position: absolute;
+        content: "";
+        width: 20rem;
+        height: 12rem;
+        background: $white;
+        padding: 1rem;
+        border: 1px solid blue;
+        border-radius: 2rem;
+        display: none;
+        transition: all 0.3s;
+      }
+      .land {
+        fill: #CCCCCC;
+        fill-opacity: 1;
+        stroke: white;
+        stroke-opacity: 1;
+        stroke-width: 0.5;
+        position: relative;
+        &:hover{
+          stroke: $black;
+          stroke-width: 2;
+          transition: 0.3s all;
+          
+        }
+    }
+
+    
+
+    //charts
+    .donut {
+        --donut-size: 60px;
+        --donut-border-width: 8px;
+        --donut-spacing: 0;
+        --donut-spacing-color: 255, 255, 255;
+        --donut-spacing-deg: calc(1deg * var(--donut-spacing));
+        border-radius: 50%;
+        height: var(--donut-size);
+        margin-bottom: 10px;
+        position: relative;
+        width: var(--donut-size);
+      }
+      .donut__slice {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+      .donut__slice::before,
+      .donut__slice::after {
+        border: var(--donut-border-width) solid rgba(0, 0, 0, 0);
+        border-radius: 50%;
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+        width: 100%;
+      }
+      .donut__slice::before {
+        border-width: calc(var(--donut-border-width) + 1px);
+        box-shadow: 0 0 1px 0 rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)));
+      }
+      .donut__slice__first {
+        --first-start: 0;
+      }
+      .donut__slice__first::before {
+        border-top-color: rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)));
+        -webkit-transform: rotate(calc(360deg * var(--first-start) + 45deg));
+                transform: rotate(calc(360deg * var(--first-start) + 45deg));
+      }
+      .donut__slice__first::after {
+        border-top-color: #ff6838;
+        border-right-color: rgba(255, 104, 56, calc(100 * (var(--first) - .25)));
+        border-bottom-color: rgba(255, 104, 56, calc(100 * (var(--first) - .5)));
+        border-left-color: rgba(255, 104, 56, calc(100 * (var(--first) - .75)));
+        -webkit-transform: rotate(calc(360deg * var(--first-start) + 45deg + var(--donut-spacing-deg)));
+                transform: rotate(calc(360deg * var(--first-start) + 45deg + var(--donut-spacing-deg)));
+      }
+      .donut__slice__second {
+        --second-start: calc(var(--first));
+        --second-check: max(calc(var(--second-start) - .5), 0);
+        -webkit-clip-path: inset(0 calc(50% * (var(--second-check) / var(--second-check))) 0 0);
+                clip-path: inset(0 calc(50% * (var(--second-check) / var(--second-check))) 0 0);
+      }
+      .donut__slice__second::before {
+        border-top-color: rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)));
+        -webkit-transform: rotate(calc(360deg * var(--second-start) + 45deg));
+                transform: rotate(calc(360deg * var(--second-start) + 45deg));
+      }
+      .donut__slice__second::after {
+        border-top-color: #ffc820;
+        border-right-color: rgba(255, 200, 32, calc(100 * (var(--second) - .25)));
+        border-bottom-color: rgba(255, 200, 32, calc(100 * (var(--second) - .5)));
+        border-left-color: rgba(255, 200, 32, calc(100 * (var(--second) - .75)));
+        -webkit-transform: rotate(calc(360deg * var(--second-start) + 45deg + var(--donut-spacing-deg)));
+                transform: rotate(calc(360deg * var(--second-start) + 45deg + var(--donut-spacing-deg)));
+      }
+    
+}

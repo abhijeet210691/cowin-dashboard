@@ -1,0 +1,99 @@
+@import '../../../assets/style/helpers/variables';
+@import '../../../assets/style/helpers/mixins';
+
+.header-top-wraper{
+    background-color: $primarycolor;
+    padding: 0.5rem 0;
+    .header-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo-wraper{
+            .logo-link{
+                font-size: 1.4rem;
+                display: flex;
+                align-items: center;
+                color: $white;
+                .logo{
+                    max-width: 4rem;
+                }
+                .logo-text{
+                    max-width: 15rem;
+                    margin-left: 1rem;
+                }
+            }
+        }
+        .lang-wraper{
+            display: flex;
+            align-items: center;
+            .btn-wraper{
+                display: flex;
+                align-items: center;
+                @include breakpoint(mobile){
+                    display: none;
+                }
+                .btn{
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+    
+}
+.header-bottom-wraper{
+    background: $secoundrycolor;
+    padding: 1rem 0;
+    .header-bottom{
+        .navbar{
+            position: relative;
+            .navbar-toggler{
+                border: none;
+                .toggle-circle{
+                    display: block;
+                    height: 0.8rem;
+                    width: 0.8rem;
+                    border-radius: 50%;
+                    background-color: $white;
+                    margin-top: 0.1rem;
+                }
+                &:focus{
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+            &.navbar-expand-lg{
+                .navbar-collapse{
+                    justify-content: flex-end;
+                }
+            } 
+            .collapse{
+                &.show{
+                    // position: absolute;
+                    // bottom: -8rem;
+                    // right: 0;
+                    background-color: $white;
+                }
+                .navbar-nav{
+                    flex-direction: row;
+                    @include breakpoint(tabs){
+                        flex-direction: column;
+                    }
+                    .nav-item{
+                        margin-left: 2rem;
+                        .nav-link{
+                            font-weight: 600;
+                            color: $white;
+                            @include breakpoint(tabs){
+                                color: $blue;
+                            }
+                            &:hover{
+                                color: rgba($color: $orange, $alpha: 0.8);
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import "../../../assets/style/helpers/variables";
+@import "../../../assets/style/helpers/mixins";
+
+.footer-wraper{
+    background-color: $secoundrycolor;
+    padding: 2rem 0;
+    color: $white;
+}
